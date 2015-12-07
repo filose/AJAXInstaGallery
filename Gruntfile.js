@@ -42,6 +42,15 @@ module.exports = function(grunt){
       'dist/js/bundle.js': ['js/app.js']
     },
 
+    connect: {
+      server: {
+        options: {
+          port: 9001,
+          base: 'dist'
+        }
+      }
+    },
+
     watch: {
       css:{
         files: ['sass/partials/*.scss', 'sass/*.scss'],
@@ -59,6 +68,6 @@ module.exports = function(grunt){
 
   });
 
-  grunt.registerTask('default', ['']);
+  grunt.registerTask('default', ['connect', 'watch']);
 
 };
